@@ -1,0 +1,215 @@
+<div class="showcase-container">
+  <h1>Angular Material Components Showcase</h1>
+  
+  <div class="showcase-grid">
+    <!-- Buttons -->
+    <mat-card class="showcase-card">
+      <mat-card-header>
+        <mat-card-title>Buttons</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="button-group">
+          <button mat-button (click)="onButtonClick('basic')">Basic Button</button>
+          <button mat-raised-button color="primary" (click)="onButtonClick('raised')">Raised Button</button>
+          <button mat-flat-button color="accent" (click)="onButtonClick('flat')">Flat Button</button>
+          <button mat-stroked-button (click)="onButtonClick('stroked')">Stroked Button</button>
+          <button mat-icon-button>
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-fab color="primary">
+            <mat-icon>add</mat-icon>
+          </button>
+          <button mat-mini-fab color="accent">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Form Fields -->
+    <mat-card class="showcase-card">
+      <mat-card-header>
+        <mat-card-title>Form Fields</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Input Field</mat-label>
+            <input matInput [(ngModel)]="inputValue" placeholder="Enter text">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Select</mat-label>
+            <mat-select [(ngModel)]="selectValue">
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2">Option 2</mat-option>
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Checkboxes & Radio -->
+    <mat-card class="showcase-card">
+      <mat-card-header>
+        <mat-card-title>Checkboxes & Radio</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="form-group">
+          <mat-checkbox [(ngModel)]="checkboxValue">Checkbox Option</mat-checkbox>
+          <mat-checkbox [checked]="true" [disabled]="true">Disabled Checkbox</mat-checkbox>
+          
+          <mat-radio-group [(ngModel)]="radioValue" class="radio-group">
+            <mat-radio-button value="option1">Option 1</mat-radio-button>
+            <mat-radio-button value="option2">Option 2</mat-radio-button>
+            <mat-radio-button value="option3">Option 3</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Sliders & Toggle -->
+    <mat-card class="showcase-card">
+      <mat-card-header>
+        <mat-card-title>Sliders & Toggle</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="form-group">
+          <mat-slider [(ngModel)]="sliderValue" min="0" max="100" step="1" discrete>
+            <input matSliderThumb>
+          </mat-slider>
+          <p>Value: {{ sliderValue }}</p>
+          
+          <mat-slide-toggle [(ngModel)]="toggleValue">
+            Slide Toggle
+          </mat-slide-toggle>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Progress Indicators -->
+    <mat-card class="showcase-card">
+      <mat-card-header>
+        <mat-card-title>Progress Indicators</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="form-group">
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          <p>Progress: {{ progressValue }}%</p>
+          
+          <mat-progress-spinner mode="determinate" [value]="progressValue"></mat-progress-spinner>
+          <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Chips -->
+    <mat-card class="showcase-card">
+      <mat-card-header>
+        <mat-card-title>Chips</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-chip-set>
+          @for (chip of chips; track chip) {
+            <mat-chip (removed)="removeChip(chip)">
+              {{ chip }}
+              <button matChipRemove>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip>
+          }
+        </mat-chip-set>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Badge & Icon -->
+    <mat-card class="showcase-card">
+      <mat-card-header>
+        <mat-card-title>Badge & Icons</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="icon-group">
+          <button mat-icon-button [matBadge]="badgeCount" matBadgeColor="warn">
+            <mat-icon>notifications</mat-icon>
+          </button>
+          
+          <button mat-icon-button matTooltip="This is a tooltip">
+            <mat-icon>help</mat-icon>
+          </button>
+          
+          <mat-icon color="primary">favorite</mat-icon>
+          <mat-icon color="accent">star</mat-icon>
+          <mat-icon>home</mat-icon>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Tabs -->
+    <mat-card class="showcase-card">
+      <mat-card-header>
+        <mat-card-title>Tabs</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-tab-group [(selectedIndex)]="selectedTab">
+          <mat-tab label="Tab 1">
+            <p>Content for Tab 1</p>
+          </mat-tab>
+          <mat-tab label="Tab 2">
+            <p>Content for Tab 2</p>
+          </mat-tab>
+          <mat-tab label="Tab 3">
+            <p>Content for Tab 3</p>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Expansion Panel -->
+    <mat-card class="showcase-card">
+      <mat-card-header>
+        <mat-card-title>Expansion Panel</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Panel 1</mat-panel-title>
+              <mat-panel-description>Description for panel 1</mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>This is the content of panel 1</p>
+          </mat-expansion-panel>
+          
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Panel 2</mat-panel-title>
+              <mat-panel-description>Description for panel 2</mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>This is the content of panel 2</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- List -->
+    <mat-card class="showcase-card">
+      <mat-card-header>
+        <mat-card-title>List</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          @for (item of listItems; track item.title) {
+            <mat-list-item>
+              <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+              <div matListItemTitle>{{ item.title }}</div>
+              <div matListItemLine>{{ item.subtitle }}</div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          }
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
