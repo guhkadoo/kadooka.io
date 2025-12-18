@@ -36,5 +36,5 @@ jobs:
       - name: Deploy via rsync
         run: |
           rsync -avz --delete dist/ \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/kadooka.io
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/app.kadooka.io
 

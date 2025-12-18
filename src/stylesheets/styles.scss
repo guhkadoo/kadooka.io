@@ -1,2 +1,6 @@
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
-@import url(./global-variables.scss);
+/***********************************************************
+ * This file is the main stylesheet for the application.
+ ***********************************************************/
+
+@import url(./_global-variables.scss);
+@import url(./_material_theme.scss);
