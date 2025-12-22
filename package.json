@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng cache clean && ng serve --port 4300",
-    "build": "ng build",
+    "build:lib": "ng build ngx-kadooka",
+    "build:app": "ng build",
+    "build": "npm run build:lib && npm run build:app",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -38,6 +40,7 @@
     "@angular/cli": "^21.0.3",
     "@angular/compiler-cli": "^21.0.0",
     "jsdom": "^27.1.0",
+    "ng-packagr": "^21.0.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }

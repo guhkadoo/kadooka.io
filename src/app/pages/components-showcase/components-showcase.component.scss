@@ -2,12 +2,13 @@
   padding: 2rem;
   max-width: 1400px;
   margin: 0 auto;
+  background-color: var(--mat-sys-background);
 
   h1 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
     font-weight: 500;
-    color: rgba(0, 0, 0, 0.87);
+    color: var(--mat-sys-on-background);
   }
 }
 
@@ -15,6 +16,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 2rem;
+  background-color: var(--mat-sys-background);
 }
 
 .showcase-card {

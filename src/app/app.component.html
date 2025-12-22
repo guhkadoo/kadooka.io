@@ -1,6 +1,10 @@
 <div>
   <h1>{{ name() }}</h1>
   <input type="text" [value]="name()" (input)="name.set($event.target.value)" />
+  <button mat-raised-button color="primary" (click)="setTheme('light-blue-theme')">Light Blue Theme</button>
+  <button mat-raised-button color="primary" (click)="setTheme('dark-blue-theme')">Dark Blue Theme</button>
+  <button mat-raised-button color="primary" (click)="setTheme('light-red-theme')">Light Red Theme</button>
+  <button mat-raised-button color="primary" (click)="setTheme('dark-red-theme')">Dark Red Theme</button>
 </div>
 
 <router-outlet />

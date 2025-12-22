@@ -38,7 +38,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "5MB",
                   "maximumError": "1MB"
                 },
                 {
@@ -71,6 +71,32 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "ngx-kadooka": {
+      "projectType": "library",
+      "root": "projects/ngx-kadooka",
+      "sourceRoot": "projects/ngx-kadooka/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-kadooka/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-kadooka/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/ngx-kadooka/tsconfig.spec.json"
+          }
         }
       }
     }

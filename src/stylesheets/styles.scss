@@ -2,5 +2,7 @@
  * This file is the main stylesheet for the application.
  ***********************************************************/
 
-@import url(./_global-variables.scss);
 @import url(./_material_theme.scss);
+@import url(./_global-customization.scss);
+@import url(./_global-variables.scss);
+@import url(./material_components/_mat-card.scss);

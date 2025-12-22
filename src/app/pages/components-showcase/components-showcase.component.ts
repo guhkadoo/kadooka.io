@@ -20,6 +20,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import { NgxKadooka } from 'ngx-kadooka';
+
 
 @Component({
   selector: 'app-components-showcase',
@@ -45,7 +47,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatTabsModule,
     MatExpansionModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    NgxKadooka
   ],
   templateUrl: './components-showcase.component.html',
   styleUrl: './components-showcase.component.scss'

@@ -2,14 +2,61 @@
 @use './_theme-colors' as theme-colors;
 
 :root {
-    color-scheme: light dark;
-    @include mat.theme((
-        color: (
-            primary: theme-colors.$primary-palette,
-            tertiary: theme-colors.$tertiary-palette,
-        ),
-        typography: 'Open Sans',
-        density: 0
-    ));
+    &.light-blue-theme {
+        color-scheme: light;
+        @include mat.theme((
+            color: (
+                primary: theme-colors.$blue-primary-palette,
+                tertiary: theme-colors.$blue-tertiary-palette,
+                theme-type: light
+            ),
+            typography: 'Open Sans',
+            density: 0
+        ), $overrides: (
+        ));
+    }
 
+    &.dark-blue-theme {
+        color-scheme: dark;
+        @include mat.theme((
+            color: (
+                primary: theme-colors.$blue-primary-palette,
+                tertiary: theme-colors.$blue-tertiary-palette,
+                theme-type: dark
+            ),
+            typography: 'Open Sans',
+            density: 0
+        ), $overrides: (    
+            "background": #1a1d24        
+        ));
+    }
+
+    &.light-red-theme {
+        color-scheme: light;
+        @include mat.theme((
+            color: (
+                primary: theme-colors.$red-primary-palette,
+                tertiary: theme-colors.$red-tertiary-palette,
+                theme-type: light
+            ),
+            typography: 'Open Sans',
+            density: 0
+        ), $overrides: (
+        ));
+    }
+
+    &.dark-red-theme {
+        color-scheme: dark;
+        @include mat.theme((
+            color: (
+                primary: theme-colors.$red-primary-palette,
+                tertiary: theme-colors.$red-tertiary-palette,
+                theme-type: dark
+            ),
+            typography: 'Open Sans',
+            density: 0
+        ), $overrides: (
+            "background": #271a19
+        ));
+    }
 }
