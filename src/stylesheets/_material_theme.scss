@@ -27,7 +27,8 @@
             typography: 'Open Sans',
             density: 0
         ), $overrides: (    
-            "background": #1a1d24        
+            "background": #1a1d24,
+            "surface-container-low": #1d2632      
         ));
     }
 
@@ -56,7 +57,67 @@
             typography: 'Open Sans',
             density: 0
         ), $overrides: (
-            "background": #271a19
+            "background": #241817,
+            "surface-container-low": #2e1f1e
+        ));
+    }
+
+    &.light-green-theme {
+        color-scheme: light;
+        @include mat.theme((
+            color: (
+                primary: theme-colors.$green-primary-palette,
+                tertiary: theme-colors.$green-tertiary-palette,
+                theme-type: light
+            ),
+            typography: 'Open Sans',
+            density: 0
+        ), $overrides: (
+        ));
+    }
+
+    &.dark-green-theme {
+        color-scheme: dark;
+        @include mat.theme((
+            color: (
+                primary: theme-colors.$green-primary-palette,
+                tertiary: theme-colors.$green-tertiary-palette,
+                theme-type: dark
+            ),
+            typography: 'Open Sans',
+            density: 0
+        ), $overrides: (
+            "background": #182220,
+            "surface-container-low": #1d2627
+        ));
+    }
+
+    &.light-yellow-theme {
+        color-scheme: light;
+        @include mat.theme((
+            color: (
+                primary: theme-colors.$yellow-primary-palette,
+                tertiary: theme-colors.$yellow-tertiary-palette,
+                theme-type: light
+            ),
+            typography: 'Open Sans',
+            density: 0
+        ), $overrides: (
+        ));
+    }
+
+    &.dark-yellow-theme {
+        color-scheme: dark;
+        @include mat.theme((
+            color: (
+                primary: theme-colors.$yellow-primary-palette,
+                tertiary: theme-colors.$yellow-tertiary-palette,
+                theme-type: dark
+            ),
+            typography: 'Open Sans',
+            density: 0
+        ), $overrides: (
+            "background": #242413
         ));
     }
 }

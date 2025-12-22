@@ -12,7 +12,7 @@ export class AppComponent {
   name = signal<string>('Gustavo Kadooka');
 
   public setTheme(theme: string) {
-    document.documentElement.classList.remove('light-blue-theme', 'dark-blue-theme', 'light-red-theme', 'dark-red-theme');
+    document.documentElement.classList.remove('light-blue-theme', 'dark-blue-theme', 'light-red-theme', 'dark-red-theme', 'light-green-theme', 'dark-green-theme', 'light-yellow-theme', 'dark-yellow-theme');
     document.documentElement.classList.add(theme);
   }
 }

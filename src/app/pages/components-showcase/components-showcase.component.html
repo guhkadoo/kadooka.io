@@ -34,13 +34,28 @@
       <mat-card-content>
         <div class="form-group">
           <mat-form-field appearance="outline">
-            <mat-label>Input Field</mat-label>
+            <mat-label>Input Field Outline</mat-label>
             <input matInput [(ngModel)]="inputValue" placeholder="Enter text">
             <mat-icon matSuffix>search</mat-icon>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
-            <mat-label>Select</mat-label>
+            <mat-label>Select Outline</mat-label>
+            <mat-select [(ngModel)]="selectValue">
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2">Option 2</mat-option>
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Input Field Fill</mat-label>
+            <input matInput [(ngModel)]="inputValue" placeholder="Enter text">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Select Fill</mat-label>
             <mat-select [(ngModel)]="selectValue">
               <mat-option value="option1">Option 1</mat-option>
               <mat-option value="option2">Option 2</mat-option>
@@ -222,4 +237,3 @@
   </div>
   <lib-ngx-kadooka></lib-ngx-kadooka>
 </div>
-

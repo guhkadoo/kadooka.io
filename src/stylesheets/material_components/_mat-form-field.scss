@@ -1,0 +1,6 @@
+@use '@angular/material' as mat;
+
+@include mat.form-field-overrides((
+    filled-active-indicator-height: 1px,
+    filled-focus-active-indicator-height: 2px,
+));
