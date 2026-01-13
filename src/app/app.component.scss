@@ -77,8 +77,15 @@ mat-toolbar {
   }
 }
 
-// Desktop: hover no container
-@media (hover: hover) and (pointer: fine) {
+// Comportamento padrão: mobile-first (click no botão)
+.theme-dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+// Desktop: hover no container (telas maiores com hover)
+@media (min-width: 768px) and (hover: hover) {
   .theme-dropdown-container:hover .theme-dropdown {
     opacity: 1;
     visibility: visible;
@@ -90,15 +97,8 @@ mat-toolbar {
   }
 }
 
-// Mobile: click no botão
-@media (hover: none) and (pointer: coarse) {
-  .theme-dropdown.open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-  
-  // Esconder hover behavior no mobile
+// Mobile: garantir que hover não funcione
+@media (max-width: 767px), (hover: none), (pointer: coarse) {
   .theme-dropdown-container:hover .theme-dropdown:not(.open) {
     opacity: 0;
     visibility: hidden;
