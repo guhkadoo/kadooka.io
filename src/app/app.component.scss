@@ -1,0 +1,124 @@
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background-color: var(--mat-sys-inverse-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 100;
+  
+  &.dark-theme {
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.15);
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+  
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.brand-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+}
+
+
+.theme-dropdown-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dark-mode-button, .theme-menu-button {
+  .mdi {
+    font-size: 24px;
+  }
+}
+
+.theme-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 12px;
+  background-color: var(--mat-sys-surface);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  min-width: 150px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+
+  &.dark-theme {
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.10);
+  }
+}
+
+// Desktop: hover no container
+@media (hover: hover) and (pointer: fine) {
+  .theme-dropdown-container:hover .theme-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .theme-menu-button {
+    display: none;
+  }
+}
+
+// Mobile: click no botão
+@media (hover: none) and (pointer: coarse) {
+  .theme-dropdown.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  // Esconder hover behavior no mobile
+  .theme-dropdown-container:hover .theme-dropdown:not(.open) {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+  }
+}
+
+.theme-option {
+  width: 100%;
+  text-align: left;
+  padding: 8px 16px;
+  border-radius: 0;
+  justify-content: flex-start;
+  
+  &.active {
+    background-color: var(--mat-sys-primary-container);
+    color: var(--mat-sys-on-primary-container);
+  }
+  
+  &:hover:not(.active) {
+    background-color: var(--mat-sys-surface-container-highest);
+  }
+}
