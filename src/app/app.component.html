@@ -1,40 +1,94 @@
 <mat-toolbar color="primary" [class.dark-theme]="isDarkMode">
-  <a routerLink="/" class="brand-link">
-    <span class="brand-text">Gustavo Kadooka</span>
-  </a>
-  <span class="spacer"></span>
-  
-  <div class="d-flex align-items-center gap-2">
-    <div class="theme-dropdown-container">
-      <button 
-        mat-button 
-        (click)="toggleDarkMode()"
-        class="dark-mode-button">
-        <span class="mdi mdi-brightness-4"></span>
-      </button>
-      
-      <button 
-        mat-button
-        (click)="toggleDropdown()"
-        class="theme-menu-button">
-        <span class="mdi mdi-palette"></span>
+  <button
+    mat-button
+    type="button"
+    routerLink="/"
+  >
+    <span class="mdi mdi-home" style="font-size: 24px;"></span>
+  </button>
+
+  <span class="title">Gustavo Kadooka</span>
+  <button
+    mat-button
+    type="button"
+    (click)="toggleSettings()"
+  >
+    <span class="mdi mdi-cog" style="font-size: 24px;"></span>
+  </button>
+</mat-toolbar>
+
+<div class="settings-panel" [class.dark-theme]="isDarkMode" *ngIf="isSettingsOpen">
+  <div class="settings-header">
+    <h2>Configurações</h2>
+
+    <button
+      mat-button
+      type="button"
+      (click)="toggleSettings()"
+    >
+      <span class="mdi mdi-close" style="font-size: 18px;"></span>
+    </button>
+  </div>
+
+  <div class="settings-section">
+    <label>Tema</label>
+
+    <div class="settings-options">
+      <button
+        mat-stroked-button
+        [class.selected]="!isDarkMode"
+        (click)="setDarkMode(false)"
+      >
+        Claro
       </button>
 
-      <div 
-        class="theme-dropdown"
-        [class.open]="isDropdownOpen"
-        [class.dark-theme]="isDarkMode">
-        <button 
-          *ngFor="let color of colors" 
-          mat-button
-          (click)="selectColor(color.value)"
-          [class.active]="selectedColor === color.value"
-          class="theme-option">
-          {{ color.label }}
-        </button>
-      </div>
+      <button
+        mat-stroked-button
+        [class.selected]="isDarkMode"
+        (click)="setDarkMode(true)"
+      >
+        Escuro
+      </button>
     </div>
   </div>
-</mat-toolbar>
+
+  <div class="settings-section">
+    <label>Linguagem</label>
+
+    <div class="settings-options">
+      <button
+        mat-stroked-button
+        [class.selected]="selectedLanguage === 'en'"
+        (click)="selectLanguage('en')"
+      >
+        EN
+      </button>
+
+      <button
+        mat-stroked-button
+        [class.selected]="selectedLanguage === 'pt'"
+        (click)="selectLanguage('pt')"
+      >
+        PT
+      </button>
+    </div>
+  </div>
+
+  <div class="settings-section">
+    <label>Cor</label>
+
+    <div class="color-options">
+      <button
+        *ngFor="let color of colors"
+        type="button"
+        class="color-option"
+        [class.selected]="selectedColor === color.value"
+        [style.background-color]="'var(--theme-' + color.value + '-' + (isDarkMode ? 'dark' : 'light') + ')'"
+        (click)="selectColor(color.value)"
+      ></button>
+
+    </div>
+  </div>
+</div>
 
 <router-outlet />

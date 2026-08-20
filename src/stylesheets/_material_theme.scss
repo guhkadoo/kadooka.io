@@ -10,7 +10,7 @@
                 tertiary: theme-colors.$blue-tertiary-palette,
                 theme-type: light
             ),
-            typography: 'Open Sans',
+            typography: 'Monocraft',
             density: 0
         ), $overrides: (
         ));
@@ -24,7 +24,7 @@
                 tertiary: theme-colors.$blue-tertiary-palette,
                 theme-type: dark
             ),
-            typography: 'Open Sans',
+            typography: 'Monocraft',
             density: 0
         ), $overrides: (    
             "background": #1a1d24,
@@ -40,7 +40,7 @@
                 tertiary: theme-colors.$red-tertiary-palette,
                 theme-type: light
             ),
-            typography: 'Open Sans',
+            typography: 'Monocraft',
             density: 0
         ), $overrides: (
         ));
@@ -54,7 +54,7 @@
                 tertiary: theme-colors.$red-tertiary-palette,
                 theme-type: dark
             ),
-            typography: 'Open Sans',
+            typography: 'Monocraft',
             density: 0
         ), $overrides: (
             "background": #241817,
@@ -70,7 +70,7 @@
                 tertiary: theme-colors.$green-tertiary-palette,
                 theme-type: light
             ),
-            typography: 'Open Sans',
+            typography: 'Monocraft',
             density: 0
         ), $overrides: (
         ));
@@ -84,7 +84,7 @@
                 tertiary: theme-colors.$green-tertiary-palette,
                 theme-type: dark
             ),
-            typography: 'Open Sans',
+            typography: 'Monocraft',
             density: 0
         ), $overrides: (
             "background": #182220,
@@ -100,7 +100,7 @@
                 tertiary: theme-colors.$yellow-tertiary-palette,
                 theme-type: light
             ),
-            typography: 'Open Sans',
+            typography: 'Monocraft',
             density: 0
         ), $overrides: (
         ));
@@ -114,10 +114,40 @@
                 tertiary: theme-colors.$yellow-tertiary-palette,
                 theme-type: dark
             ),
-            typography: 'Open Sans',
+            typography: 'Monocraft',
             density: 0
         ), $overrides: (
             "background": #242413
+        ));
+    }
+
+    &.light-purple-theme {
+        color-scheme: light;
+        @include mat.theme((
+            color: (
+                primary: theme-colors.$purple-primary-palette,
+                tertiary: theme-colors.$purple-tertiary-palette,
+                theme-type: light
+            ),
+            typography: 'Monocraft',
+            density: 0
+        ), $overrides: (
+        ));
+    }
+
+    &.dark-purple-theme {
+        color-scheme: dark;
+        @include mat.theme((
+            color: (
+                primary: theme-colors.$purple-primary-palette,
+                tertiary: theme-colors.$purple-tertiary-palette,
+                theme-type: dark
+            ),
+            typography: 'Monocraft',
+            density: 0
+        ), $overrides: (
+            "background": #241824,
+            "surface-container-low": #2e1f2e
         ));
     }
 }
