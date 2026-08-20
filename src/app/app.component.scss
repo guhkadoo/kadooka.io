@@ -13,10 +13,27 @@ mat-toolbar {
   }
 }
 
-.title {  
+// TÍTULO DO SITE
+.title {
+  flex: 1;
+  text-align: center;
+
   font-size: 36px;
+  white-space: nowrap;
 }
 
+@media (max-width: 600px) {
+  mat-toolbar {
+    padding: 0 8px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}
+
+
+// PAINEL DE CONFIGURAÇÕES
 .settings-panel {
   position: absolute;
   top: 64px;
