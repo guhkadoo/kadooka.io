@@ -19,7 +19,7 @@
 
 <div class="settings-panel" [class.dark-theme]="isDarkMode" *ngIf="isSettingsOpen">
   <div class="settings-header">
-    <h2>Configurações</h2>
+    <h2>{{ 'app.configurations' | translate }}</h2>
 
     <button
       mat-button
@@ -31,7 +31,7 @@
   </div>
 
   <div class="settings-section">
-    <label>Tema</label>
+    <label>{{ 'app.theme' | translate }}</label>
 
     <div class="settings-options">
       <button
@@ -39,7 +39,7 @@
         [class.selected]="!isDarkMode"
         (click)="setDarkMode(false)"
       >
-        Claro
+        {{ 'app.light' | translate }}
       </button>
 
       <button
@@ -47,13 +47,13 @@
         [class.selected]="isDarkMode"
         (click)="setDarkMode(true)"
       >
-        Escuro
+        {{ 'app.dark' | translate }}
       </button>
     </div>
   </div>
 
   <div class="settings-section">
-    <label>Linguagem</label>
+    <label>{{ 'app.language' | translate }}</label>
 
     <div class="settings-options">
       <button
@@ -75,7 +75,7 @@
   </div>
 
   <div class="settings-section">
-    <label>Cor</label>
+    <label>{{ 'app.color' | translate }}</label>
 
     <div class="color-options">
       <button

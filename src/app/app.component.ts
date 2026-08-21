@@ -1,10 +1,11 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { TranslatePipe } from './pipes/translate.pipe';
+import { TranslationService } from './services/translation.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
     MatToolbarModule,
     MatIconModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    TranslatePipe,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -33,9 +35,12 @@ export class AppComponent implements OnInit {
     { value: 'purple', label: 'Roxo' }
   ];
 
+  constructor(private translationService: TranslationService) {}
+
   ngOnInit() {
     this.loadPreferences();
     this.applyTheme();
+    this.translationService.loadLanguage(this.selectedLanguage);
   }
 
   toggleSettings() {
@@ -55,11 +60,7 @@ export class AppComponent implements OnInit {
 
   selectLanguage(language: string) {
     this.selectedLanguage = language;
-
-    localStorage.setItem(
-      'language',
-      language
-    );
+    this.translationService.loadLanguage(language);
   }
 
   selectColor(color: string) {
