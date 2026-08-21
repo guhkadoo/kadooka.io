@@ -82,9 +82,9 @@
         *ngFor="let color of colors"
         type="button"
         class="color-option"
-        [class.selected]="selectedColor === color.value"
-        [style.background-color]="'var(--theme-' + color.value + '-' + (isDarkMode ? 'dark' : 'light') + ')'"
-        (click)="selectColor(color.value)"
+        [class.selected]="selectedColor === color"
+        [style.background-color]="'var(--theme-' + color + '-' + (isDarkMode ? 'dark' : 'light') + ')'"
+        (click)="selectColor(color)"
       ></button>
 
     </div>

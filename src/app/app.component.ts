@@ -27,14 +27,7 @@ export class AppComponent implements OnInit {
   isDarkMode: boolean = false;
   isSettingsOpen: boolean = false;
 
-  colors = [
-    { value: 'blue', label: 'Azul' },
-    { value: 'red', label: 'Vermelho' },
-    { value: 'green', label: 'Verde' },
-    { value: 'yellow', label: 'Amarelo' },
-    { value: 'purple', label: 'Roxo' }
-  ];
-
+  colors = ['blue', 'red', 'green', 'yellow', 'purple'];
   constructor(private translationService: TranslationService) {}
 
   ngOnInit() {
