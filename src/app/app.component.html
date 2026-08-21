@@ -1,18 +1,15 @@
 <mat-toolbar color="primary" [class.dark-theme]="isDarkMode">
-  <button
-    mat-button
-    type="button"
-    routerLink="/"
-  >
+  <button mat-button type="button" routerLink="/">
     <span class="mdi mdi-home" style="font-size: 24px;"></span>
   </button>
 
   <span class="title">Gustavo Kadooka</span>
-  <button
-    mat-button
-    type="button"
-    (click)="toggleSettings()"
-  >
+
+  <button mat-button type="button">
+    <span class="mdi mdi-account" style="font-size: 24px;"></span>
+  </button>
+  
+  <button mat-button type="button" (click)="toggleSettings()">
     <span class="mdi mdi-cog" style="font-size: 24px;"></span>
   </button>
 </mat-toolbar>
